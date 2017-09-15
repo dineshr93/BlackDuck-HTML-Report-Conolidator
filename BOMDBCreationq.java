@@ -19,7 +19,7 @@ import org.jsoup.select.Elements;
 
 
 /**
- * Author RAD9KOR_11_nov_2016
+ * Author DINESH_11_nov_2016
  * 
  * */
 /*
@@ -43,7 +43,7 @@ public class BOMDBCreationq {
 		System.out.println("Drag and drop folder which contains only html report:");
 		String folderinput = scan.next();//
 
-		//String folderinput = "D:/Automation/DBCREATOR/pack/htmls";
+		
 		File files[] = new File(folderinput).listFiles(new FilenameFilter() { public boolean accept(File dir, String name) { return name.endsWith(".html"); }});
 
 		if(files.length != 0){
@@ -151,47 +151,7 @@ public class BOMDBCreationq {
 				//				 bomversiontext = elements.get(1).text();
 				text = elements.get(0).text();
 			}
-			/*Version a;
-
-			 final Pattern pattern = Pattern.compile("Product version (.+?) KB");
-				final Matcher matcher = pattern.matcher(bomversiontext);
-				boolean found = matcher.find();
-				if(found == false){
-					 a = new Version("7.1.3"); //follow new version
-				}else{
-					 a = new Version(matcher.group(1));
-				}
-
-				Version b = new Version("7.1.3");
-				int result = a.compareTo(b); ////1 is a>b   , -1 is a<b
-				a.equals(b);    // return false or true
-				if(a.equals(b) || result == 1){ //1 is a>b   , -1 is a<b
-					//protex version >=7.1.3
-					 c_as = document.select(".bomTable td:eq(0)");//*
-					 c_lc = document.select(".bomTable td:eq(1)");
-					 c_nm = document.select(".bomTable td:eq(2)");//*
-					 c_v = document.select(".bomTable td:eq(3)");//*
-					 c_hp = document.select(".bomTable td:eq(4)");//*
-					 c_cc = document.select(".bomTable td:eq(5)");//*
-					 c_l = document.select(".bomTable td:eq(6)");//*
-					 c_ei = document.select(".bomTable td:eq(7)");
-					 c_u = document.select(".bomTable td:eq(8)");//*
-					 c_ss = document.select(".bomTable td:eq(9)");//*
-					 c_mcm = document.select(".bomTable td:eq(10)");
-				}else{
-					//protex version <7.1.3
-					 c_as = document.select(".bomTable td:eq(0)");//*
-					 c_lc = document.select(".bomTable td:eq(1)");
-					 c_nm = document.select(".bomTable td:eq(2)");//*
-					 c_v = document.select(".bomTable td:eq(3)");//*
-					 c_hp = document.select(".bomTable td:eq(4)");//*
-					 c_cc = document.select(".bomTable td:eq(5)");//*
-					 c_l = document.select(".bomTable td:eq(6)");//*
-					 //external id not available
-					 c_u = document.select(".bomTable td:eq(7)");//*
-					 c_ss = document.select(".bomTable td:eq(8)");//*
-					 c_mcm = document.select(".bomTable td:eq(9)");
-				}*/
+			
 
 			if (text.equalsIgnoreCase("External IDs")) {
 				c_as = document.select(".bomTable td:eq(0)");//*
